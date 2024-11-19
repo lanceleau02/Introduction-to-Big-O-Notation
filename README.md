@@ -44,11 +44,7 @@ In asymptotic analysis, there are three different ways to estimate the efficienc
 1. **Ignore constants:** for example, if an algorithm has a real compexity of $5 \times O(n)$ so $5n$, we ignore constants so its Big-O Notation will be $O(n)$. Why? Because as a function's input moves towards the infinity, constants become less and less significant.
 2. **Certain terms dominate others:** it is called *"Big-O Growth Rate"* or *"Big-O Growth Hierarchy"*. Big-O Notation ignore low-oder terms so the following rule can be deduced:
 
-<div style="text-align: center">
-
-$O(1) < O(log \space n) < O(n) < O(n \space log \space n) < O(n^2) < O(2^n) < O(n!)$
-
-</div>
+$$O(1) < O(log \space n) < O(n) < O(n \space log \space n) < O(n^2) < O(2^n) < O(n!)$$
 
 Here is a graphic representation to better understand this concept:
 
@@ -80,13 +76,11 @@ print(x + y);
 
 In this example, each line of this code has a complexity of $O(1)$ so the complexity of the code is:
 
-<div style="text-align: center">
+$$O(1) + O(1) + O(1) = O(1)$$
 
-$O(1) + O(1) + O(1) = O(1)$
-$OR$
-$3 \times O(1) = O(1)$
+$$OR$$
 
-</div>
+$$3 \times O(1) = O(1)$$
 
 We categorize a function to $O(1)$ if and only if all the steps have a complexity of $O(1)$.
 
@@ -103,7 +97,7 @@ We categorize a function to $O(1)$ if and only if all the steps have a complexit
 	- Binary Search: searching for a value in a sorted array by repeatedly halving the search space.
 	- Tree Traversals: operations on balanced binary search trees (e.g., insert, delete, or search).
 
----
+<u>**Logarithms:**</u>
 
 Before going further, we need to understand what a logarithm is. Simply, it's the power that a number needs to be raised to get some other number. In computer science, unless specified otherwise, the number that we want to raise to some power is always 2 (binary systems). This the theory, now let's see that more in details thanks to an example.
 
@@ -119,65 +113,38 @@ function logFunc(n) {
 }
 ```
 
-```mermaid
-graph TD
-    A["logFunc(8)"] --> B["logFunc(4)"]
-    B --> C["logFunc(2)"]
-    C --> D["logFunc(1)"]
-    D --> E["logFunc(0)"]
-    E --> F["return"]
+This example is a simple recursive function that repeatedly divides the input `n` by 2 (using `Math.floor()` to ensure the result the following rule can be deduced:is an integer) until `n` reaches 0.
 
+Here is a diagram to schematize its operation with `n = 8`:
+
+<div style="text-align: center">
+
+![](./diagrams/recursive_logFunc.svg)
+<small>We skip the last recursive call with `n = 0` to make it easier to understand.</small>
+
+</div>
+
+So, in this example where `n` equals to ${\color{green}8}$ we can see that there is ${\color{lightblue}3}$ levels of execution and in each level we divide `n` by ${\color{red}2}$, corresponding to $2^{\color{lightblue}3} = {\color{red}2} \times {\color{red}2} \times {\color{red}2} = {\color{green}8}$.
+
+<u>**Example (iterative):**</u>
+
+```Python
+function logFunc(n) {
+	while (n > 1)
+		n = Math.floor(n / 2);
+}
 ```
 
-```mermaid
-graph TD
-    A["logFunc(8)"] --> B["logFunc(4)"]
-    B --> C["logFunc(2)"]
-    C --> D["logFunc(1)"]
-    D --> E["logFunc(0)"]
-    E --> F["return"]
+In this iterative example, the `logFunc()` function repeatedly divides `n` by 2 using a while loop until `n` becomes less than or equal to 1.
 
-    %% Adding notes
-    A -.-> |"Initial call with n = 8"| sideNote1[Note: Divide by 2]
-    B -.-> |"n = 4, proceed"| sideNote2[Note: Divide by 2]
-    C -.-> |"n = 2, proceed"| sideNote3[Note: Divide by 2]
-    D -.-> |"n = 1, proceed"| sideNote4[Note: Divide by 2]
-    E -.-> |"Base case reached (n = 0)"| sideNote5[Note: Terminate recursion]
+Here is a breakdown:
 
+```Text
+Iteration 1 : n = 8 / 2 = 4
+Iteration 2 : n = 4 / 2 = 2
+Iteration 3 : n = 2 / 2 = 1
 ```
 
-```mermaid
-graph TD
-    A["logFunc(8)"] --> B["logFunc(4)"]
-    B --> C["logFunc(2)"]
-    C --> D["logFunc(1)"]
-    D --> E["logFunc(0)"]
-    E --> F["return"]
+So when we pass in a value of `n`, we'll always need to divide this value `n` by $2(log \space n)$ times to get 1 or we need to do $(log \space n)$ iterations of the loop before we get 1, so:
 
-    %% Adding side notes
-    subgraph Explanation
-    note1["Start with n=8"]
-    note2["Divide n by 2: n=4"]
-    note3["Divide n by 2: n=2"]
-    note4["Divide n by 2: n=1"]
-    note5["Divide n by 2: n=0, terminate recursion"]
-    end
-
-    %% Connecting nodes to side notes
-    A -- "Step 1" --> note1
-    B -- "Step 2" --> note2
-    C -- "Step 3" --> note3
-    D -- "Step 4" --> note4
-    E -- "Step 5" --> note5
-
-```
-
-```mermaid
-graph TD
-    A["logFunc(8)"] -->|Divide 8 by 2, n = 4| B["logFunc(4)"]
-    B -->|Divide 4 by 2, n = 2| C["logFunc(2)"]
-    C -->|Divide 2 by 2, n = 1| D["logFunc(1)"]
-    D -->|Divide 1 by 2, n = 0| E["logFunc(0)"]
-    E -->|n = 0, return| F["Return"]
-
-```
+$$O(log \space 8) \rarr O(log_2 \space 8) \rarr 2^? = 8 \rarr 2^3 = 8$$
