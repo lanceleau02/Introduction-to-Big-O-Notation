@@ -17,7 +17,7 @@ Welcome in this introduction to Big-O Notation. I decided to write it to better 
 
 **Big-O Notation** is a mathematical way to describe how the runtime (or space requirement) of an algorithm grows as the size of the input increases. It focuses on the worst-case scenario and provides an upper bound on the growth rate.
 
-It measures algorithm's efficiency based on four rules:
+It measures algorithm's efficiency based on four principles:
 
 1. **Complexity in terms of input size (N):** abstract the efficiency of algorithms from the machines they run on.
 2. **Machine independent:** don't care about the stats of the machine.
@@ -37,3 +37,7 @@ In asymptotic analysis, there are three different ways to estimate the efficienc
 3. **Average Case Analysis (Rarely used):**
     - In average case analysis, we take all possible inputs and calculate the computing time for all of the inputs. Sum all the calculated values and divide the sum by the total number of inputs.
     - We must know (or predict) the distribution of cases.
+
+### 3. General rules
+
+1. **Ignore constants:** 
