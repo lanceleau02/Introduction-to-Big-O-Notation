@@ -69,9 +69,9 @@ Here is a graphic representation to better understand this concept:
 <u>**Example:**</u>
 
 ```Python
-x = 5 + (15 * 20);
-y = 15 - 2;
-print(x + y);
+x = 5 + (15 * 20) # O(1)
+y = 15 - 2 # O(1)
+print(x + y) # O(1)
 ```
 
 In this example, each line of this code has a complexity of $O(1)$ so the complexity of the code is:
@@ -94,23 +94,24 @@ We categorize a function to $O(1)$ if and only if all the steps have a complexit
 - **Efficient for Large Inputs:** algorithms with $O(log \space n)$ complexity are very efficient for processing large inputs because the work grows slowly.
 - **Common in Divide-and-Conquer:** algorithms that repeatedly divide the input into smaller parts often have $O(log \space n)$ complexity.
 - **Examples:**
-	- Binary Search: searching for a value in a sorted array by repeatedly halving the search space.
-	- Tree Traversals: operations on balanced binary search trees (e.g., insert, delete, or search).
+	- **Binary Search:** searching for a value in a sorted array by repeatedly halving the search space.
+	- **Tree Traversals:** operations on balanced binary search trees (e.g., insert, delete, or search).
 
 <u>**Logarithms:**</u>
 
-Before going further, we need to understand what a logarithm is. Simply, it's the power that a number needs to be raised to get some other number. In computer science, unless specified otherwise, the number that we want to raise to some power is always 2 (binary systems). This the theory, now let's see that more in details thanks to an example.
+Before going further, we need to understand what a logarithm is. Simply, it's the power that a number needs to be raised to get some oy = 5 + (15 * 20)
+for x in range(O, n):ther number. In computer science, unless specified otherwise, the number that we want to raise to some power is always 2 (binary systems). This the theory, now let's see that more in details thanks to an example.
 
-Considering this expression: $2^x = 8$, we want to find the number to which we must raise 2 to find 8. This expression is the equivalent to: $x = log_2(8) = 3$ so $2^3 = 8$. Here it is, this is the basics of logarithms. Now, we can see codes examples.
+Considering this expression: $2^x = 8$, we want to find the number to which we must raise 2 to find 8. This expression is the equivalent to: $x = log_2(8) = 3$ so $2^3 = 8$. Here it is, this is the basics of log### 2. $O(log \space n)$ - Logarithmic Timearithms. Now, we can see codes examples.
 
 <u>**Example (recursive):**</u>
 
 ```Python
-function logFunc(n) {
-	if (n === 0) return;
-	n = Math.floor(n / 2);
-	return logFunc(n);
-}
+def logFunc(n):
+	if (n === 0) # O(1)
+		return # O(1)
+	n = Math.floor(n / 2) # O(1)
+	return logFunc(n) # O(log n)
 ```
 
 This example is a simple recursive function that repeatedly divides the input `n` by 2 (using `Math.floor()` to ensure the result the following rule can be deduced:is an integer) until `n` reaches 0.
@@ -129,10 +130,9 @@ So, in this example where `n` equals to ${\color{green}8}$ we can see that there
 <u>**Example (iterative):**</u>
 
 ```Python
-function logFunc(n) {
-	while (n > 1)
-		n = Math.floor(n / 2);
-}
+def logFunc(n):
+	while (n > 1) # O(log n)
+		n = Math.floor(n / 2) # O(1)
 ```
 
 In this iterative example, the `logFunc()` function repeatedly divides `n` by 2 using a while loop until `n` becomes less than or equal to 1.
@@ -145,6 +145,48 @@ Iteration 2 : n = 4 / 2 = 2
 Iteration 3 : n = 2 / 2 = 1
 ```
 
-So when we pass in a value of `n`, we'll always need to divide this value `n` by $2(log \space n)$ times to get 1 or we need to do $(log \space n)$ iterations of the loop before we get 1, so:
+So when we pass in a value of `n`, we'll always need to divide this value `n` by $2(log \space n)$ times to get 1 or we need to do $log \space n$ iterations of the loop before we get 1, so:
 
 $$O(log \space 8) \rarr O(log_2 \space 8) \rarr 2^? = 8 \rarr 2^3 = 8$$
+
+### 3. $O(n)$ - Linear Time
+
+**$O(n)$ complexity** (linear time complexity) describes an algorithm where the execution time grows linearly with the size of the input. This means that as the input size doubles, the number of operations also doubles.
+
+<u>**Characteristics:**</u>
+
+- **Proportional Growth:** the time taken or operations performed are directly proportional to the input size.
+- **Common in Iterative Processes:** algorithms that process every element in the input once, typically exhibit $O(n)$ complexity.
+- **Scales Well with Moderate Input Sizes:** while it may not be as fast as $O(1)$ or $O(log \space n)$, linear time algorithms are efficient for many use cases.
+- **Examples:**
+	- **Iterating through an Array:** visiting every element in an array to calculate the sum or find a specific value.
+	- **Linear Search:** searching for a value in an unsorted array by examining each element.
+
+<u>**Example:**</u>
+
+```Python
+def nFunc(n):
+	y = 5 + (15 * 20) # O(1)
+	for x in range(0, n): # O(n)
+		print(x) # O(1)
+```
+
+Here is a simple example with 2 statements. The first statement is a calculation which does not depend on any index so its have a $O(1)$ complexity. The second statement is a simple `for()` loop iterates from 0 to `n` and prints the value of `x`, so the complexity of this statement will be:
+
+$$O(n) \times O(1) = O(n)$$
+
+And as we saw earlier, and according to the *"Big-O Notation Growth Rate"*, the statements with a $O(n)$ complexity dominate the statements with a $O(1)$ complexity, so this code has a complexity of $O(n)$.
+
+### 4. $O(n \space log \space n)$ - Linearithmic Time
+
+**$O(n \space log \space n)$ complexity** (linearithmic time complexity) describes an algorithm where the execution time grows proportionally to the input size $n$, multiplied by the logarithm of $n$. This type of complexity often arises in algorithms that combine linear iteration with a divide-and-conquer approach or efficient sorting mechanisms.
+
+<u>**Characteristics:**</u>
+
+- **Combination of Linear and Logarithmic Work:** the $n$ factor comes from processing all elements, and the $log \space n$ factor arises from repeatedly dividing the problem or performing logarithmic work for each element.
+- **Efficient for Large Data Sets:** many optimal sorting algorithms, like Merge Sort and Quick Sort, operate with $O(n \space log \space n)$ complexity.
+- **Examples:**
+	- **Merge Sort:** divides the array into halves ($log \space n$) and merges them back together in linear time ($n$).
+	- **Heap Sort:** builds a binary heap ($O(n)$) and performs repeated heap extractions ($O(log \space n)$).
+
+
