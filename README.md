@@ -128,7 +128,7 @@ Here is a diagram to schematize its operation with `n = 8`:
 
 </div>
 
-$$We skip the last recursive call with `n = 0` to make it easier to understand.$$
+$$We skip the last recursive call with n = 0 to make it easier to understand.$$
 
 So, in this example where `n` equals to ${\color{green}8}$ we can see that there is ${\color{lightblue}3}$ levels of execution and in each level### 4. $O(n \space log \space n)$ - Linearithmic Time we divide `n` by ${\color{red}2}$, corresponding to $2^{\color{lightblue}3} = {\color{red}2} \times {\color{red}2} \times {\color{red}2} = {\color{green}8}$.
 
