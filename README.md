@@ -126,7 +126,7 @@ Here is a diagram to schematize its operation with `n = 8`:
 
 ![](./diagrams/recursive_logFunc.svg)
 
-$$We skip the last recursive call with `n = 0` to make it easier to understand.$$
+$We skip the last recursive call with `n = 0` to make it easier to understand.$
 
 </div>
 
