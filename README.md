@@ -48,7 +48,7 @@ $$O(1) < O(log \space n) < O(n) < O(n \space log \space n) < O(n^2) < O(2^n) < O
 
 Here is a graphic representation to better understand this concept:
 
-<div style="text-align: center">
+<div align="center">
 
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/0*P5FlnSY6h2Y7hAE5.png)
 
@@ -122,7 +122,7 @@ This example is a simple recursive function that repeatedly divides the input `n
 
 Here is a diagram to schematize its operation with `n = 8`:
 
-<div style="text-align: center">
+<div align="center">
 
 ![](./diagrams/recursive_logFunc.svg)
 <small>We skip the last recursive call with `n = 0` to make it easier to understand.</small>
@@ -208,7 +208,7 @@ In this example, the `nLogNFunc()` function takes an integer $n$ as input and pe
 
 Here is a scheme to better understand:
 
-<div style="text-align: center">
+<div align="center">
 
 ![](./diagrams/nLogNFunc.svg)
 <small>The brackets that enclose the printing statements designate
@@ -252,7 +252,7 @@ In this example, the `square()` function generates and prints all possible pairs
 
 As usual, here is a scheme to better understand:
 
-<div style="text-align: center">
+<div align="center">
 
 ![](./diagrams/square.svg)
 
