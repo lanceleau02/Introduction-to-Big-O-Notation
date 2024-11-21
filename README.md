@@ -7,7 +7,7 @@ Welcome in this introduction to Big-O Notation. I decided to write it to better 
 1. [Overview](#overview)
 	1. [Definition](#definition)
 	2. [Types of measurement](#types-of-measurement)
-	2. [General rules](#general-rules)
+	3. [General rules](#general-rules)
 2. [Complexities](#complexities)
 3. [Third Example](#third-example)
 4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
@@ -50,7 +50,7 @@ Here is a graphic representation to better understand this concept:
 
 <div align="center">
 
-![](https://miro.medium.com/v2/resize:fit:720/format:webp/0*P5FlnSY6h2Y7hAE5.png)
+![Big-O Notation Growth Hierarchy](https://miro.medium.com/v2/resize:fit:720/format:webp/0*P5FlnSY6h2Y7hAE5.png)
 
 </div>
 
@@ -60,17 +60,17 @@ Here is a graphic representation to better understand this concept:
 
 **$O(1)$ complexity** (constant time complexity) describes an algorithm whose execution time or space requirements remain constant regardless of the input size. This means that the algorithm performs the same number of operations, regardless of whether the input size is 1, 100, or 1 million.
 
-<u>**Characteristics:**</u>
+**Characteristics:**
 
 - **Independent from input size ($n$):** the number of steps the algorithm takes does not grow with the size of the input.
 - **Efficient:** algorithms with $O(1)$ complexity are typically very fast because they perform a fixed number of operations.
 - **Examples:**
-	- Expressions that never change (e.g., $100 \times 100000$).
-	- Accessing an element in an array by its index (e.g., `arr[5]`).
-	- Inserting an element into a hash table (on average).
-	- Checking the length of a list (if it is pre-computed)
+  - Expressions that never change (e.g., $100 \times 100000$).
+  - Accessing an element in an array by its index (e.g., `arr[5]`).
+  - Inserting an element into a hash table (on average).
+  - Checking the length of a list (if it is pre-computed)
 
-<u>**Example:**</u>
+**Example:**
 
 ```Python
 def oneFunc():
@@ -93,22 +93,22 @@ We categorize a function to $O(1)$ if and only if all the steps have a complexit
 
 **$O(log \space n)$ complexity** (logarithmic time complexity) describes an algorithm where the execution time grows logarithmically with the size of the input. This means that as the input size increases, the number of operations grows much more slowly, proportional to the logarithm of the input size.
 
-<u>**Characteristics:**</u>
+**Characteristics:**
 
 - **Logarithmic Growth:** for each doubling of the input size, the number of operations increases by a fixed, smaller amount.
 - **Efficient for Large Inputs:** algorithms with $O(log \space n)$ complexity are very efficient for processing large inputs because the work grows slowly.
 - **Common in Divide-and-Conquer:** algorithms that repeatedly divide the input into smaller parts often have $O(log \space n)$ complexity.
 - **Examples:**
-	- **Binary Search:** searching for a value in a sorted array by repeatedly halving the search space.
-	- **Tree Traversals:** operations on balanced binary search trees (e.g., insert, delete, or search).
+  - **Binary Search:** searching for a value in a sorted array by repeatedly halving the search space.
+  - **Tree Traversals:** operations on balanced binary search trees (e.g., insert, delete, or search).
 
-<u>**Logarithms:**</u>
+**Logarithms:**
 
 Before going further, we need to understand what a logarithm is. Simply, it's the power that a number needs to be raised to get some other number. In computer science, unless specified otherwise, the number that we want to raise to some power is always 2 (binary systems). This is the theory, now let's see that more in details thanks to an example.
 
 Considering this expression: $2^x = 8$, we want to find the number to which we must raise 2 to find 8. This expression is the equivalent to: $x = log_2(8) = 3$ so $2^3 = 8$. Here it is, this is the basics of logarithms. Now, we can see codes examples.
 
-<u>**Example (recursive):**</u>
+**Example (recursive):**
 
 ```Python
 def logFunc(n):
@@ -124,15 +124,15 @@ Here is a diagram to schematize its operation with `n = 8`:
 
 <div align="center">
 
-![](./diagrams/recursive_logFunc.svg)
+![logFunc()](./diagrams/recursive_logFunc.svg)
 
 </div>
 
-$$We \space skip \space t\\he \space last \space recursive \space call \space wit\\h \space n \space = \space 0 \space to \space make \space it \space easier \space to \space understand.$$
+> Note: we skip the last recursive call with $n = 0$ to make it easier to understand.
 
 So, in this example where `n` equals to ${\color{green}8}$ we can see that there is ${\color{lightblue}3}$ levels of execution and in each level### 4. $O(n \space log \space n)$ - Linearithmic Time we divide `n` by ${\color{red}2}$, corresponding to $2^{\color{lightblue}3} = {\color{red}2} \times {\color{red}2} \times {\color{red}2} = {\color{green}8}$.
 
-<u>**Example (iterative):**</u>
+**Example (iterative):**
 
 ```Python
 def logFunc(n):
@@ -145,9 +145,9 @@ In this iterative example, the `logFunc()` function repeatedly divides `n` by 2 
 Here is a breakdown:
 
 ```Text
-Iteration 1 : n = 8 / 2 = 4
-Iteration 2 : n = 4 / 2 = 2
-Iteration 3 : n = 2 / 2 = 1
+Iteration 1: n = 8 / 2 = 4
+Iteration 2: n = 4 / 2 = 2
+Iteration 3: n = 2 / 2 = 1
 ```
 
 So when we pass in a value of `n`, we'll always need to divide this value `n` by $2(log \space n)$ times to get 1 or we need to do $log \space n$ iterations of the loop before we get 1, so:
@@ -158,16 +158,16 @@ $$O(log \space 8) \rarr O(log_2 \space 8) \rarr 2^? = 8 \rarr 2^3 = 8$$
 
 **$O(n)$ complexity** (linear time complexity) describes an algorithm where the execution time grows linearly with the size of the input. This means that as the input size doubles, the number of operations also doubles.
 
-<u>**Characteristics:**</u>
+**Characteristics:**
 
 - **Proportional Growth:** the time taken or operations performed are directly proportional to the input size.
 - **Common in Iterative Processes:** algorithms that process every element in the input once, typically exhibit $O(n)$ complexity.
 - **Scales Well with Moderate Input Sizes:** while it may not be as fast as $O(1)$ or $O(log \space n)$, linear time algorithms are efficient for many use cases.
 - **Examples:**
-	- **Iterating through an Array:** visiting every element in an array to calculate the sum or find a specific value.
-	- **Linear Search:** searching for a value in an unsorted array by examining each element.
+  - **Iterating through an Array:** visiting every element in an array to calculate the sum or find a specific value.
+  - **Linear Search:** searching for a value in an unsorted array by examining each element.
 
-<u>**Example:**</u>
+**Example:**
 
 ```Python
 def nFunc(n):
@@ -186,15 +186,15 @@ And as we saw earlier, and according to the *"Big-O Notation Growth Rate"*, the 
 
 **$O(n \space log \space n)$ complexity** (linearithmic time complexity) describes an algorithm where the execution time grows proportionally to the input size $n$, multiplied by the logarithm of $n$. This type of complexity often arises in algorithms that combine linear iteration with a divide-and-conquer approach or efficient sorting mechanisms.
 
-<u>**Characteristics:**</u>
+**Characteristics:**
 
 - **Combination of Linear and Logarithmic Work:** the $n$ factor comes from processing all elements, and the $log \space n$ factor arises from repeatedly dividing the problem or performing logarithmic work for each element.
 - **Efficient for Large Data Sets:** many optimal sorting algorithms, like Merge Sort and Quick Sort, operate with $O(n \space log \space n)$ complexity.
 - **Examples:**
-	- **Merge Sort:** divides the array into halves ($log \space n$) and merges them back together in linear time ($n$).
-	- **Heap Sort:** builds a binary heap ($O(n)$) and performs repeated heap extractions ($O(log \space n)$).
+  - **Merge Sort:** divides the array into halves ($log \space n$) and merges them back together in linear time ($n$).
+  - **Heap Sort:** builds a binary heap ($O(n)$) and performs repeated heap extractions ($O(log \space n)$).
 
-<u>**Example:**</u>
+**Example:**
 
 ```Python
 def nLogNFunc(n):
@@ -211,12 +211,11 @@ Here is a scheme to better understand:
 
 <div align="center">
 
-![](./diagrams/nLogNFunc.svg)
-<br>
-The brackets that enclose the printing statements designate
-the `for()` loop ($O(n)$) and not the `print()` statements ($O(1)$).
-
+![nLogNFunc()](./diagrams/nLogNFunc.svg)
 </div>
+
+> Note: the brackets that enclose the printing statements designate
+the `for()` loop ($O(n)$) and not the `print()` statements ($O(1)$).
 
 For each iteration in the `while()` loop, we loop to the full size of $y$, which is the original size of $n$, so each of these inner loops has a complexity of $O(n)$, so the processing time increases linearly with the size of $n$.
 
@@ -225,23 +224,23 @@ Example with an input ($n$) of ${\color{lightblue}4}$: $O(log_{\color{red}2} \sp
 Time to bring everything together, $O(n \space log \space n)$ means $O(n \times log \space n)$ so if we insert some values we get: 
 
 $$O({\color{lightblue}4} \times {\color{green}2}) \space because \space log_2({\color{lightblue}4}) = {\color{green}2}$$
- 
+  
 And if you look to the visualization, it makes sense because for each iteration of the `while()` loop, we iterate trough the entirety of $y$, which is the original value of $n$.
 
 ### 5. $O(n^2)$ - Quadratic Time
 
 **$O(n^2)$ complexity** (quadratic time complexity) describes an algorithm where the execution time grows proportionally to the square of the input size. This means that as the input size $n$ doubles, the number of operations increases by a factor of $4 \space (2^2)$.
 
-<u>**Characteristics:**</u>
+**Characteristics:**
 
 - **Rapid Growth:** the time taken grows quickly as the input size increases, making $O(n^2)$ less efficient for large inputs.
 - **Nested Loops:** algorithms with $O(n^2)$ complexity often involve two nested loops, each iterating through the input.
 - **Good for Small Data Sets:** while slow for large inputs, $O(n^2)$ can be acceptable for small or moderately sized inputs.
 - **Examples:**
-	- **Bubble Sort:** compares adjacent elements in a list and swaps them if needed, requiring nested iterations over the input.
-	- **Checking All Pairs:** comparing every possible pair of elements in an array or matrix.
+  - **Bubble Sort:** compares adjacent elements in a list and swaps them if needed, requiring nested iterations over the input.
+  - **Checking All Pairs:** comparing every possible pair of elements in an array or matrix.
 
-<u>**Example:**</u>
+**Example:**
 
 ```Python
 def square(n):
@@ -256,7 +255,7 @@ As usual, here is a scheme to better understand:
 
 <div align="center">
 
-![](./diagrams/square.svg)
+![square()](./diagrams/square.svg)
 
 </div>
 
@@ -268,21 +267,62 @@ We can also deduce this from the fact that there are two nested `for()` loops, e
 
 ### 5. $O(2^n)$ - Exponential Time
 
+**$O(2^n)$ complexity** (exponential time complexity) describes an algorithm where the execution time doubles with each additional unit increase in the input size $n$. This results in extremely fast growth in the number of operations, making $O(2^n)$ algorithms impractical for large input sizes. Such algorithms are typically seen in problems where all possible combinations or solutions must be explored.
 
+**Characteristics:**
+  - **Exponential Growth:**
+	- As the input size increases, the time or number of operations grows exponentially.
+	- Even small increases in $n$ result in very large increases in time complexity.
+  - **Brute Force or Recursive Solutions:**
+	- Many algorithms with $O(2^n)$ complexity are brute-force recursive solutions that explore every possible subset or combination of elements in the problem.
+  - **Examples:**
+	- **Subset Sum Problem:** finding all subsets of a set and checking whether they sum to a given target.
+	- **Solving the Traveling Salesman Problem (TSP):** finding the shortest possible route that visits all cities exactly once and returns to the origin.
+	- **Fibonacci Sequence (naive recursion):** a naive recursive approach to calculating Fibonacci numbers results in $O(2^n)$ time complexity because of repeated calculations of the same values.
 
-
-
-
-
+**Example (iterative):**
 
 ```Python
 def fib(n):
-	if n == 0:
-		return 0
-	if n == 1:
-		return 1
-	return fib(n - 1) + fib(n - 2)
+    a = 0 # O(1)
+    while True: # O(1)
+        if a < 2**n: # O(1)
+            a = a + 1 # O(1)
+        else:
+            break # O(1)
+    return a # O(1)
+```
+
+This function iteratively counts from 0 to $2^n$ by incrementing a variable `a` in a loop. It starts by initializing `a` to 0, then repeatedly increments `a` as long as it is less than $2^n$. Once a reaches $2^n$, the loop exits, and the function returns the value of `a`, which will always be $2^n$. The function demonstrates exponential growth in its iteration count because the loop runs $2^n$ times.
+
+Let's breakdown this function with $n = 3$, where the loop will run until `a` reaches $2^3 = 8$:
+
+```Text
+Start: a = 0
+Iteration 1: a = 1
+Iteration 2: a = 2
+Iteration 3: a = 3
+Iteration 4: a = 4
+Iteration 5: a = 5
+Iteration 6: a = 6
+Iteration 7: a = 7
+Iteration 8: a = 8
+The loop exits because a >= 2**n
+```
+
+At this point, you maybe wonder why the function's complexity is $O(2^n)$ considering that all statements have a complexity of $O(1)$. Since the loop will execute $2^n$ times, each iteration of the loop has $O(1)$ operations, and there are $2^n$ iterations. Thus, the overall time complexity is:
+
+$$O(1) \times 2^n = O(2^n)$$
+
+**Example (recursive):**
+
+```Python
+def fib(n):
+	if n == 0: # O(1)
+		return 0 # O(1)
+	if n == 1: # O(1)
+		return 1 # O(1)
+	return fib(n - 1) + fib(n - 2) # O(1)
 ```
 
 In this example, the fib function computes the $n$-th Fibonacci number using a recursive approach. It is based on the definition of the Fibonacci sequence, where $fib(0) = 0$, $fib(1) = 1$, and each subsequent number is the sum of the two preceding ones: $fib(n) = fib(n−1) + fib(n−2)$. The function checks the base cases $n=0$ and $n=1$, returning 0 and 1 respectively. For larger $n$, the function recursively calls itself twice to compute $fib(n−1)$ and $fib(n−2)$, and sums the results.
-
