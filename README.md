@@ -326,3 +326,45 @@ def fib(n):
 ```
 
 In this example, the fib function computes the $n$-th Fibonacci number using a recursive approach. It is based on the definition of the Fibonacci sequence, where $fib(0) = 0$, $fib(1) = 1$, and each subsequent number is the sum of the two preceding ones: $fib(n) = fib(n−1) + fib(n−2)$. The function checks the base cases $n=0$ and $n=1$, returning 0 and 1 respectively. For larger $n$, the function recursively calls itself twice to compute $fib(n−1)$ and $fib(n−2)$, and sums the results.
+
+> Note: the two `return()` statements are our base cases and this recursion is not a tail recursion.
+
+We can first represent the `fib()` function with $T()$ (for time):
+
+$$T(n) = T(n - 1) + T(n - 2) + C$$
+
+Where $C$ is a constant because the first four statements and the addition are constants.
+
+Let's use an another scheme to better understand:
+
+// scheme
+
+Ok, there is a lot of informations so let's do it step by step. On the first level of recursion, to combine the results of the two recursive calls ($n-1$ and $n-2$), it "costs" $C$ operations. On the second level of recursion, it "costs" four operations because $2 \times C$ or $2^1 \times C$. On the third level of recursion, it "costs" height operations because $4 \times C$ or $2^2 \times C$. Finally, on the fourth level of recursion, it "costs" sixteen operations because $8 \times C$ or $2^3 \times C$. And so on for the following levels...
+
+You can notice that to calculate the number of operations for each level we can do:
+
+$$nb\_operations = 2^{level - 1} \times C$$
+
+To get back to our diagram, since on the left side of the tree we're substracting by 1 and on the right side we're substracting by 2, the depth of the tree will be shorter on the right side but, at the maximum depth of recursion, we have something like:
+
+$$\leq 2^{n-1} \times C$$
+
+So if we sumup all of them, we get:
+
+$$T(n) \leq C + 2^1C + 2^2C + 2^3C + ... + 2^{n-1}C$$
+
+At this point, you're maybe wondering why we use the '$\leq$' sign instead of a simple '$=$'. That's because, as we saw it earlier, the right side of the tree will terminate earlier in the recursion. So at the maximum depth level, we may not have these many ($2^{n-1}C$) operations that we need to take care of. And that's ok because the Big-O Notation uses the upper bound (it focuses on the worst-case scenarios for how the runtime of an algorithm scales as the input size grows), so:
+
+$$T(n) \leq C \cdot \{1 + 2^1 + 2^2 + 2^3 + ... + 2^{n-1}\}$$
+
+This is equals to:
+
+$$T(n) = C \cdot \{2^n - 1\}$$
+
+Since $C$ and $-1$ are constants, we can ignore them so:
+
+$$T(n) = 2^n$$
+
+This means that the real complexity of the `fib()` function is:
+
+$$T(n) = O(2^n)$$
