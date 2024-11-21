@@ -48,7 +48,11 @@ $$O(1) < O(log \space n) < O(n) < O(n \space log \space n) < O(n^2) < O(2^n) < O
 
 Here is a graphic representation to better understand this concept:
 
+<div style="text-align: center">
+
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/0*P5FlnSY6h2Y7hAE5.png)
+
+</div>
 
 ## II - Complexities
 
