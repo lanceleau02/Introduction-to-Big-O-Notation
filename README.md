@@ -212,8 +212,9 @@ Here is a scheme to better understand:
 <div align="center">
 
 ![](./diagrams/nLogNFunc.svg)
-<small>The brackets that enclose the printing statements designate
-the `for()` loop ($O(n)$) and not the `print()` statements ($O(1)$).</small>
+<br>
+The brackets that enclose the printing statements designate
+the `for()` loop ($O(n)$) and not the `print()` statements ($O(1)$).
 
 </div>
 
