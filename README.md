@@ -112,9 +112,9 @@ Considering this expression: $2^x = 8$, we want to find the number to which we m
 
 ```Python
 def logFunc(n):
-	if (n === 0) # O(1)
+	if n == 0: # O(1)
 		return # O(1)
-	n = Math.floor(n / 2) # O(1)
+	n = math.floor(n / 2) # O(1)
 	return logFunc(n) # O(log n)
 ```
 
@@ -137,7 +137,7 @@ So, in this example where `n` equals to ${\color{green}8}$ we can see that there
 ```Python
 def logFunc(n):
 	while (n > 1): # O(log n)
-		n = Math.floor(n / 2) # O(1)
+		n = math.floor(n / 2) # O(1)
 ```
 
 In this iterative example, the `logFunc()` function repeatedly divides `n` by 2 using a while loop until `n` becomes less than or equal to 1.
@@ -200,7 +200,7 @@ And as we saw earlier, and according to the *"Big-O Notation Growth Rate"*, the 
 def nLogNFunc(n):
 	y = n # O(1)
 	while (n > 1): # O(log n)
-		n = Math.floor(n / 2) # O(1)
+		n = math.floor(n / 2) # O(1)
 		for i in range(1, y + 1): # O(n)
 			print(i) # O(1)
 ```
@@ -322,7 +322,7 @@ def fib(n):
 		return 0 # O(1)
 	if n == 1: # O(1)
 		return 1 # O(1)
-	return fib(n - 1) + fib(n - 2) # O(1)
+	return fib(n - 1) + fib(n - 2) # Depends on recursion depth
 ```
 
 In this example, the fib function computes the $n$-th Fibonacci number using a recursive approach. It is based on the definition of the Fibonacci sequence, where $fib(0) = 0$, $fib(1) = 1$, and each subsequent number is the sum of the two preceding ones: $fib(n) = fib(n−1) + fib(n−2)$. The function checks the base cases $n=0$ and $n=1$, returning 0 and 1 respectively. For larger $n$, the function recursively calls itself twice to compute $fib(n−1)$ and $fib(n−2)$, and sums the results.
@@ -393,12 +393,18 @@ $$T(n) = O(2^n)$$
 
 ```Python
 def f(n):
-	if n == 0:
-		print("******")
-		return
-	for i in range(0, n):
-		f(n - 1)
+	if n == 0: # O(1)
+		print("******") # O(1)
+		return # O(1)
+	for i in range(0, n): # O(n)
+		f(n - 1) # Depends on recursion depth
 ```
 
 This example is a recursive function that generates a tree of recursive calls with a depth of `n` and branching factor equal to `n`. When `n == 0`, it prints `"******"` and returns, serving as the base case. For `n > 0`, the function recursively calls itself `n` times, decrementing `n` in each call. As a result, the total number of recursive calls grows rapidly, with the number of calls forming a factorial-like growth pattern ($n!$). Each time the base case is reached, `"******"` is printed, making this a highly recursive function with exponential output for larger values of `n`.
+
+Again, let's take a scheme as example with `n = 3`:
+
+
+
+
 
