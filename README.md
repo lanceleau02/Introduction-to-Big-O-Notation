@@ -284,13 +284,13 @@ We can also deduce this from the fact that there are two nested `for()` loops, e
 
 ```Python
 def fib(n):
-    a = 0 # O(1)
-    while True: # O(1)
-        if a < 2**n: # O(1)
-            a = a + 1 # O(1)
-        else:
-            break # O(1)
-    return a # O(1)
+	a = 0 # O(1)
+	while True: # O(1)
+		if a < 2**n: # O(1)
+			a = a + 1 # O(1)
+		else:
+			break # O(1)
+	return a # O(1)
 ```
 
 This function iteratively counts from 0 to $2^n$ by incrementing a variable `a` in a loop. It starts by initializing `a` to 0, then repeatedly increments `a` as long as it is less than $2^n$. Once a reaches $2^n$, the loop exits, and the function returns the value of `a`, which will always be $2^n$. The function demonstrates exponential growth in its iteration count because the loop runs $2^n$ times.
@@ -337,15 +337,19 @@ Where $C$ is a constant because the first four statements and the addition are c
 
 Let's use an another scheme to better understand:
 
-// scheme
+<div align="center">
 
-Ok, there is a lot of informations so let's do it step by step. On the first level of recursion, to combine the results of the two recursive calls ($n-1$ and $n-2$), it "costs" $C$ operations. On the second level of recursion, it "costs" four operations because $2 \times C$ or $2^1 \times C$. On the third level of recursion, it "costs" height operations because $4 \times C$ or $2^2 \times C$. Finally, on the fourth level of recursion, it "costs" sixteen operations because $8 \times C$ or $2^3 \times C$. And so on for the following levels...
+![fib()](./diagrams/fib.png)
+
+</div>
+
+Ok, there is a lot of informations so let's do it step by step. On the first level of recursion, to combine the results of the two recursive calls ($n-1$ and $n-2$), it "costs" $C$ operations because $1 \times C$ or $2^0 \times C$. On the second level of recursion, it "costs" four operations because $2 \times C$ or $2^1 \times C$. On the third level of recursion, it "costs" height operations because $4 \times C$ or $2^2 \times C$. Finally, on the fourth level of recursion, it "costs" sixteen operations because $8 \times C$ or $2^3 \times C$. And so on for the following levels...
 
 You can notice that to calculate the number of operations for each level we can do:
 
 $$nb\_operations = 2^{level - 1} \times C$$
 
-To get back to our diagram, since on the left side of the tree we're substracting by 1 and on the right side we're substracting by 2, the depth of the tree will be shorter on the right side but, at the maximum depth of recursion, we have something like:
+To get back to our diagram, since on the left side of the tree we're substracting by 1 and on the right side we're substracting by 2, the depth of the tree will be shorter on the right side but, at the maximum depth of recursion (where we hit a base case), we have something like:
 
 $$\leq 2^{n-1} \times C$$
 
@@ -355,7 +359,7 @@ $$T(n) \leq C + 2^1C + 2^2C + 2^3C + ... + 2^{n-1}C$$
 
 At this point, you're maybe wondering why we use the '$\leq$' sign instead of a simple '$=$'. That's because, as we saw it earlier, the right side of the tree will terminate earlier in the recursion. So at the maximum depth level, we may not have these many ($2^{n-1}C$) operations that we need to take care of. And that's ok because the Big-O Notation uses the upper bound (it focuses on the worst-case scenarios for how the runtime of an algorithm scales as the input size grows), so:
 
-$$T(n) \leq C \cdot \{1 + 2^1 + 2^2 + 2^3 + ... + 2^{n-1}\}$$
+$$T(n) \leq C \cdot \{1 + 2^1 + 2^2 + 2^3 + ... + 2^{n - 1}\}$$
 
 This is equals to:
 
@@ -368,3 +372,33 @@ $$T(n) = 2^n$$
 This means that the real complexity of the `fib()` function is:
 
 $$T(n) = O(2^n)$$
+
+### 6. $O(n!)$ - Factorial Time
+
+**$O(n!)$ complexity** (factorial time complexity) describes an algorithm where the execution time grows factorially with the size of the input. This means that for an input of size $n$, the algorithm performs $n!$ operations, where $n! = n \times (n - 1) \times (n - 2) \times ⋯ \times 1$. Factorial growth is extraordinarily rapid, making $O(n!)$ algorithms infeasible for even moderately large input sizes.
+
+**Characteristics:**
+- **Extremely Rapid Growth:** $n!$ grows faster than exponential complexities like $2^n$.
+  - For example:
+	- $5!=120$
+	- $10!=3,628,800$
+	- $20!=2,432,902,008,176,640,000$
+- **Typical in Combinatorial Problems:** algorithms that need to consider every possible permutation of $n$ items often have $O(n!)$ complexity.
+- **Used in Brute Force Solutions:** problems requiring a search through all permutations, such as the Traveling Salesman Problem (brute force approach).
+- **Examples:**
+  - **Traveling Salesman Problem (Brute Force):** given $n$ cities, calculate the total distance for all $n!$ possible tours to find the shortest route.
+  - **Generating Permutations:** generating all possible orders of $n$ items.
+
+**Example:**
+
+```Python
+def f(n):
+	if n == 0:
+		print("******")
+		return
+	for i in range(0, n):
+		f(n - 1)
+```
+
+This example is a recursive function that generates a tree of recursive calls with a depth of `n` and branching factor equal to `n`. When `n == 0`, it prints `"******"` and returns, serving as the base case. For `n > 0`, the function recursively calls itself `n` times, decrementing `n` in each call. As a result, the total number of recursive calls grows rapidly, with the number of calls forming a factorial-like growth pattern ($n!$). Each time the base case is reached, `"******"` is printed, making this a highly recursive function with exponential output for larger values of `n`.
+
