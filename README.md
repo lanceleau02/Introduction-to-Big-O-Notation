@@ -4,13 +4,13 @@ Welcome in this introduction to Big-O Notation. I decided to write it to better 
 
 ## Table of contents
 
-1. [Overview](#overview)
-	1. [Definition](#definition)
-	2. [Types of measurement](#types-of-measurement)
-	3. [General rules](#general-rules)
-2. [Complexities](#complexities)
-3. [Third Example](#third-example)
-4. [Fourth Example](#fourth-examplehttpwwwfourthexamplecom)
+1. Overview
+	1. Definition
+	2. Types of measurement
+	3. General rules
+	4. Why it's useful
+	5. Choose the right algorithm
+2. Complexities
 
 ## I - Overview
 
@@ -27,7 +27,7 @@ It measures algorithm's efficiency based on four principles:
 
 ### 2. Types of measurement
 
-In asymptotic analysis, there are three different ways to estimate the efficiency of an algorithm:
+There are three different ways to estimate the efficiency of an algorithm:
 
 1. **Worst Case Analysis (Mostly used):**
 	- In the worst-case analysis, we calculate the upper bound on the running time of an algorithm. We must know the case that causes a maximum number of operations to be executed.
@@ -53,6 +53,42 @@ Here is a graphic representation to better understand this concept:
 ![Big-O Notation Growth Hierarchy](https://miro.medium.com/v2/resize:fit:720/format:webp/0*P5FlnSY6h2Y7hAE5.png)
 
 </div>
+
+### 4. Why it's useful
+
+Let's take a practical example. David and Goliath are two software engineers and they need an algorithm to search a number in a sorted list of $n$ elements. David suggest a binary search and Goliath a linear search. To make the right choice, they decide to determine and understand the complexity of each algorithm.
+
+In the first one, we divide the list into two halves, determine which half the target is in, and repeat this process until the target is found or the list is empty. In the best case, this method has a complexity of $O(1)$ if the target is at the middle, and in the worst case, its complexity is $O(log \space n)$ because each step halves the search space.
+
+In the second algorithm, we check each element one by one until the target is found or the list ends. In the best case, the complexity is also $O(1)$ if the target is the first element. But in the worst case, if the target is the last element or not in the list, the complexity become $O(n)$.
+
+So for a list of 1,000,000 elements, in the worst case, the linear search algorithm will might take up to 1,000,000 comparisons ($O(n)$) whereas the binary search will take $log_2(1,000,000) \approx 20$ comparisons ($O(log \space n)$). So in this case, the binary search algorithm fits perfectly!
+
+As you can notice, this is a very trivial example but the essence of the Big-O Notation utility is here. By the way, here, we just take care of the size of the input (the data) but in practice, there are a lot of others elements to take in account to determine which algorithm to use.
+
+### 5. Choose the right algorithm
+
+As we saw in the previous part, make the good choice when selecting an algorithm is crucial and depends on more elements than just the input size. So in this part we'll detail the approach and the elements to take in account to correclty choose an algorithm.
+
+1. **Understand your problem's requirements**
+
+- **What kind of problem are you solving?**
+  - **Sorting:** do you need to sort a list of items?
+  - **Searching:** are you trying to find specific items in a dataset?
+  - **Optimization:** are you looking to optimize something, like the shortest path in a graph or maximizing/minimizing some function?
+  - **Data processing:** are you transforming, aggregating, or cleaning data?
+- **What are the constraints of your problem?**
+  - **Real-time requirements:** does the algorithm need to work within strict time limits?
+  - **Data size:** are you dealing with a small dataset, or does the dataset scale to millions or billions of items?
+  - **Space/memory limitations:** how much memory can you afford to use?
+  - **Accuracy:** does the algorithm need to be exact, or is an approximation acceptable?
+
+2. **Analyze the Data Characteristics**
+
+- **Size of the data:** the larger the data, the more important time complexity becomes.
+- **Data structure:** what is the format of the data? Is it a list, array, graph, tree, or something else? Some algorithms work better on specific data structures. 
+- **Sorted vs. unsorted:** if the data is already sorted, certain algorithms (like binary search) may perform much better than others.
+- **Fixed vs. dynamic data:** will the data change frequently (like adding/deleting items), or is it static?
 
 ## II - Complexities
 
@@ -389,6 +425,26 @@ $$T(n) = O(2^n)$$
   - **Traveling Salesman Problem (Brute Force):** given $n$ cities, calculate the total distance for all $n!$ possible tours to find the shortest route.
   - **Generating Permutations:** generating all possible orders of $n$ items.
 
+**Factorial:**
+
+Before going further you maybe need a little reminder on what is a factorial. A factorial of a non-negative integer $n$, denoted by $n!$, is the product of all positive integers less than or equal to $n$. The factorial of $n$ also equals the product of $n$ with the next smaller factorial:
+
+$$n! = n \times (n - 1) \times (n - 2) \times (n - 3) \times ... \times 3 \times 2 \times 1$$
+
+$$OR$$
+
+$$n! = n \times (n - 1)!$$
+
+For example:
+
+$$5! = 5 \times 4 \times 3 \times 2 \times 1 = 120$$
+
+$$OR$$
+
+$$5! = 5 \times 4! = 120$$
+
+You're maybe wondering why $5 \times 4! = 120$. It's because $4! = 24$ and $5 \times 24 = 120$.
+
 **Example:**
 
 ```Python
@@ -404,7 +460,16 @@ This example is a recursive function that generates a tree of recursive calls wi
 
 Again, let's take a scheme as example with `n = 3`:
 
+<div align="center">
 
+![factorial()](./diagrams/factorial.png)
 
+</div>
 
+As you can see, we hit our base cases (the `print()` and `return` statements) 6 times and spoiler, it's not random. We get this result simply because $3! = 6$, but it goes further.
 
+As we just say, the factorial of $3$ is:
+
+$$3! = 3 \times 2 \times 1 = 6$$
+
+And if we look at the scheme, it make sense because at the top level, the for loop in `f(3)` runs 3 times, calling `f(2)` three times. Each call to `f(2)` runs its own for loop 2 times, resulting in $3 \times 2 = 6$ calls to `f(1)`. Each `f(1)` runs a loop 1 time, making $6 \times 1 = 6$ calls to `f(0)`, where "******" is printed. The total number of calls is $3! = 6$, with `f(2)` called 3 times, `f(1)` called 6 times, and `f(0)` called 6 times.
