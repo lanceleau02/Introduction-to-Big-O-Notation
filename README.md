@@ -41,7 +41,7 @@ There are three different ways to estimate the efficiency of an algorithm:
 
 ### 3. General rules
 
-1. **Ignore constants:** for example, if an algorithm has a real compexity of $5 \times O(n)$ so $5n$ (a code with 5 statements with a $O(n)$ complexity), we ignore constants so its Big-O Notation will be $O(n)$. Why? Because as a function's input moves towards the infinity, constants become less and less significant.
+1. **Ignore constants:** for example, consider a code with 5 statements, each with a complexity of $O(n)$, its real compexity is $5 \times O(n)$ so $5n$, but since we ignore constants, its Big-O Notation will be $O(n)$. Why? Because as a function's input moves towards the infinity, constants become less and less significant.
 2. **Certain terms dominate others:** it is called *"Big-O Growth Rate"* or *"Big-O Growth Hierarchy"*. Big-O Notation ignore low-oder terms so the following rule can be deduced:
 
 $$O(1) < O(log \space n) < O(n) < O(n \space log \space n) < O(n^2) < O(2^n) < O(n!)$$
@@ -70,7 +70,9 @@ As you can notice, this is a very trivial example but the essence of the Big-O N
 
 As we saw in the previous part, make the good choice when selecting an algorithm is crucial and depends on more elements than just the input size. So in this part we'll detail the approach and the elements to take in account to correclty choose an algorithm.
 
-1. **Understand your problem's requirements**
+**1. Understand your problem's requirements**
+
+The first step is to understand and review your problem's requirements:
 
 - **What kind of problem are you solving?**
   - **Sorting:** do you need to sort a list of items?
@@ -83,12 +85,38 @@ As we saw in the previous part, make the good choice when selecting an algorithm
   - **Space/memory limitations:** how much memory can you afford to use?
   - **Accuracy:** does the algorithm need to be exact, or is an approximation acceptable?
 
-2. **Analyze the Data Characteristics**
+**2. Analyze the Data Characteristics**
+
+As we saw before, to make the right algorithm choice, we need to take care of the data:
 
 - **Size of the data:** the larger the data, the more important time complexity becomes.
 - **Data structure:** what is the format of the data? Is it a list, array, graph, tree, or something else? Some algorithms work better on specific data structures. 
 - **Sorted vs. unsorted:** if the data is already sorted, certain algorithms (like binary search) may perform much better than others.
 - **Fixed vs. dynamic data:** will the data change frequently (like adding/deleting items), or is it static?
+
+**3. Match the Problem with the Right Algorithm**
+
+Based on the problem and data characteristics, here's how you might choose the algorithm:
+
+**Example 1: Sorting**
+
+- **Problem:** you need to sort a list of integers.
+- **Data:** the list is large (millions of integers).
+- **Algorithm Choices:**
+  - **Merge Sort or QuickSort ($O(n \space log \space n)$):** these are efficient sorting algorithms for large datasets. They will scale better than simpler sorts (like Bubble Sort).
+  - **Bubble Sort ($O(n²)$):** works well for small datasets but becomes inefficient as data grows.
+
+**Conclusion:** Merge Sort or QuickSort is the best choice for large datasets. If the list is small, Bubble Sort could suffice, but it’s generally less efficient.
+
+**Example 2: Searching**
+
+- **Problem:** you need to find whether a number exists in a list of integers.
+- **Data:** the list is unsorted and contains millions of elements.
+- **Algorithm Choices:**
+  - **Linear Search ($O(n)$):** this is a simple algorithm that will scan through each element in the list.
+  - **Binary Search ($O(log \space n)$):** if the list were sorted, Binary Search would be much faster.
+
+**Conclusion:** Linear Search is the right choice if the data is unsorted. If sorting the list is an option, Binary Search would be far more efficient for future searches.
 
 ## II - Complexities
 
