@@ -41,7 +41,7 @@ There are three different ways to estimate the efficiency of an algorithm:
 
 ### 3. General rules
 
-1. **Ignore constants:** for example, if an algorithm has a real compexity of $5 \times O(n)$ so $5n$, we ignore constants so its Big-O Notation will be $O(n)$. Why? Because as a function's input moves towards the infinity, constants become less and less significant.
+1. **Ignore constants:** for example, if an algorithm has a real compexity of $5 \times O(n)$ so $5n$ (a code with 5 statements with a $O(n)$ complexity), we ignore constants so its Big-O Notation will be $O(n)$. Why? Because as a function's input moves towards the infinity, constants become less and less significant.
 2. **Certain terms dominate others:** it is called *"Big-O Growth Rate"* or *"Big-O Growth Hierarchy"*. Big-O Notation ignore low-oder terms so the following rule can be deduced:
 
 $$O(1) < O(log \space n) < O(n) < O(n \space log \space n) < O(n^2) < O(2^n) < O(n!)$$
@@ -60,9 +60,9 @@ Let's take a practical example. David and Goliath are two software engineers and
 
 In the first one, we divide the list into two halves, determine which half the target is in, and repeat this process until the target is found or the list is empty. In the best case, this method has a complexity of $O(1)$ if the target is at the middle, and in the worst case, its complexity is $O(log \space n)$ because each step halves the search space.
 
-In the second algorithm, we check each element one by one until the target is found or the list ends. In the best case, the complexity is also $O(1)$ if the target is the first element. But in the worst case, if the target is the last element or not in the list, the complexity become $O(n)$.
+In the second algorithm, we check each element one by one until the target is found or the list ends. In the best case, the complexity is also $O(1)$ if the target is the first element. But in the worst case, if the target is the last element or not in the list, the complexity becomes $O(n)$.
 
-So for a list of 1,000,000 elements, in the worst case, the linear search algorithm will might take up to 1,000,000 comparisons ($O(n)$) whereas the binary search will take $log_2(1,000,000) \approx 20$ comparisons ($O(log \space n)$). So in this case, the binary search algorithm fits perfectly!
+So for a list of 1,000,000 elements, in the worst case, the linear search algorithm might take up to 1,000,000 comparisons ($O(n)$) whereas the binary search will take $log_2(1,000,000) \approx 20$ comparisons ($O(log \space n)$). So in this case, the binary search algorithm fits perfectly!
 
 As you can notice, this is a very trivial example but the essence of the Big-O Notation utility is here. By the way, here, we just take care of the size of the input (the data) but in practice, there are a lot of others elements to take in account to determine which algorithm to use.
 
