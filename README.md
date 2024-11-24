@@ -111,7 +111,7 @@ Based on the problem and data characteristics, here's how you might choose the a
 - **Problem:** you need to sort a list of integers.
 - **Data:** the list is large (millions of integers).
 - **Algorithm Choices:**
-  - **Merge Sort or QuickSort ($O(n \space log \space n)$):** these are efficient sorting algorithms for large datasets. They will scale better than simpler sorts (like Bubble Sort).
+  - **Merge Sort or QuickSort ($O(n log n)$):** these are efficient sorting algorithms for large datasets. They will scale better than simpler sorts (like Bubble Sort).
   - **Bubble Sort ($O(n²)$):** works well for small datasets but becomes inefficient as data grows.
 
 **Conclusion:** Merge Sort or QuickSort is the best choice for large datasets. If the list is small, Bubble Sort could suffice, but it’s generally less efficient.
