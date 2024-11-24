@@ -11,6 +11,14 @@ Welcome in this introduction to Big-O Notation. I decided to write it to better 
 	4. Why it's useful
 	5. Choose the right algorithm
 2. Complexities
+    1. $O(1)$ - Constant Time
+    2. $O(log \space n)$ - Logarithmic Time
+    3. $O(n)$ - Linear Time
+    4. $O(n \space log \space n)$ - Linearithmic Time
+    5. $O(n^2)$ - Quadratic Time
+    6. $O(2^n)$ - Exponential Time
+    7. $O(n!)$ - Factorial Time
+3. Sources and References
 
 ## I - Overview
 
@@ -501,3 +509,21 @@ As we just say, the factorial of $3$ is:
 $$3! = 3 \times 2 \times 1 = 6$$
 
 And if we look at the scheme, it make sense because at the top level, the for loop in `f(3)` runs 3 times, calling `f(2)` three times. Each call to `f(2)` runs its own for loop 2 times, resulting in $3 \times 2 = 6$ calls to `f(1)`. Each `f(1)` runs a loop 1 time, making $6 \times 1 = 6$ calls to `f(0)`, where "******" is printed. The total number of calls is $3! = 6$, with `f(2)` called 3 times, `f(1)` called 6 times, and `f(0)` called 6 times.
+
+## III. Sources and References
+
+### Videos & Playlists
+
+- [Big O For Software Engineering](https://www.youtube.com/playlist?list=PL7g1jYj15RUPVZDU9C276SZvlJjf4hzqV)
+- [Big-O Notation in 5 minutes](https://www.youtube.com/watch?v=__vX2sjlpXU)
+- [Big-O Notation - For Coding Interviews](https://www.youtube.com/watch?v=BgLTDT03QtU)
+- [Big-O Notation in 100 Seconds](https://www.youtube.com/watch?v=g2o22C3CRfU)
+- [Big-O Notation in 3 Minutes](https://www.youtube.com/watch?v=x2CRZaN2xgM)
+- [Fibonacci: Time Complexity | Solved Problems | GateAppliedcourse](https://www.youtube.com/watch?v=AC7KXe4vmgk)
+
+### Documentations & Articles
+
+- [Big O notation](https://en.wikipedia.org/wiki/Big_O_notation)
+- [Big-O Algorithm Complexity Cheat Sheet (Know Thy Complexities!)](https://www.bigocheatsheet.com/)
+- [Computational Complexity of Fibonacci Sequence](https://www.baeldung.com/cs/fibonacci-computational-complexity)
+- [How to solve time complexity Recurrence Relations using Recursion Tree method?](https://www.geeksforgeeks.org/how-to-solve-time-complexity-recurrence-relations-using-recursion-tree-method/)
