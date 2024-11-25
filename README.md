@@ -18,7 +18,10 @@ Welcome in this introduction to Big-O Notation. I decided to write it to better 
 	5. $O(n^2)$ - Quadratic Time
 	6. $O(2^n)$ - Exponential Time
 	7. $O(n!)$ - Factorial Time
-3. Sources and References
+3. Space Complexity
+4. Big-O Gotchas
+5. Complete Example
+6. Sources & References
 
 ## I - Overview
 
@@ -512,7 +515,7 @@ $$3! = 3 \times 2 \times 1 = 6$$
 
 And if we look at the scheme, it make sense because at the top level, the for loop in `f(3)` runs 3 times, calling `f(2)` three times. Each call to `f(2)` runs its own for loop 2 times, resulting in $3 \times 2 = 6$ calls to `f(1)`. Each `f(1)` runs a loop 1 time, making $6 \times 1 = 6$ calls to `f(0)`, where `******` is printed. The total number of calls is $3! = 6$, with `f(2)` called 3 times, `f(1)` called 6 times, and `f(0)` called 6 times.
 
-## III. Sources and References
+## III. Sources & References
 
 ### Videos & Playlists
 
