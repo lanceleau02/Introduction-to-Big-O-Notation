@@ -70,7 +70,7 @@ In the first one, we divide the list into two halves, determine which half the t
 
 In the second algorithm, we check each element one by one until the target is found or the list ends. In the best case, the complexity is also $O(1)$ if the target is the first element. But in the worst case, if the target is the last element or not in the list, the complexity becomes $O(n)$.
 
-So for a list of 1,000,000 elements, in the worst case, the linear search algorithm might take up to 1,000,000 comparisons ($O(n)$ complexity) whereas the binary search will take $log_2(1,000,000) \approx 20$ comparisons ($O(log \space n)$). So in this case, the binary search algorithm fits perfectly!
+So for a list of 1,000,000 elements, in the worst case, the linear search algorithm might take up to 1,000,000 comparisons ($O(n)$ complexity) whereas the binary search will take $log_2(1,000,000) \approx 20$ comparisons ($O(log \space n)$ complexity). So in this case, the binary search algorithm fits perfectly!
 
 As you can notice, this is a very trivial example but the essence of the Big-O Notation utility is here. By the way, here, we just take care of the size of the input (the data) but in practice, there are a lot of others elements to take in account to determine which algorithm to use.
 
