@@ -83,15 +83,15 @@ As we saw in the previous part, make the good choice when selecting an algorithm
 The first step is to understand and review your problem's requirements:
 
 - **What kind of problem are you solving?**
-  - **Sorting:** do you need to sort a list of items?
-  - **Searching:** are you trying to find specific items in a dataset?
-  - **Optimization:** are you looking to optimize something, like the shortest path in a graph or maximizing/minimizing some function?
-  - **Data processing:** are you transforming, aggregating, or cleaning data?
+	- **Sorting:** do you need to sort a list of items?
+	- **Searching:** are you trying to find specific items in a dataset?
+	- **Optimization:** are you looking to optimize something, like the shortest path in a graph or maximizing/minimizing some function?
+	- **Data processing:** are you transforming, aggregating, or cleaning data?
 - **What are the constraints of your problem?**
-  - **Real-time requirements:** does the algorithm need to work within strict time limits?
-  - **Data size:** are you dealing with a small dataset, or does the dataset scale to millions or billions of items?
-  - **Space/memory limitations:** how much memory can you afford to use?
-  - **Accuracy:** does the algorithm need to be exact, or is an approximation acceptable?
+	- **Real-time requirements:** does the algorithm need to work within strict time limits?
+	- **Data size:** are you dealing with a small dataset, or does the dataset scale to millions or billions of items?
+	- **Space/memory limitations:** how much memory can you afford to use?
+	- **Accuracy:** does the algorithm need to be exact, or is an approximation acceptable?
 
 **2. Analyze the Data Characteristics**
 
@@ -121,8 +121,8 @@ Based on the problem and data characteristics, here's how you might choose the a
 - **Problem:** you need to find whether a number exists in a list of integers.
 - **Data:** the list is unsorted and contains millions of elements.
 - **Algorithm Choices:**
-  - **Linear Search (**$O(n)$**):** this is a simple algorithm that will scan through each element in the list.
-  - **Binary Search (**$O(log \space n)$**):** if the list were sorted, Binary Search would be much faster.
+	- **Linear Search (**$O(n)$**):** this is a simple algorithm that will scan through each element in the list.
+	- **Binary Search (**$O(log \space n)$**):** if the list were sorted, Binary Search would be much faster.
 
 **Conclusion:** Linear Search is the right choice if the data is unsorted. If sorting the list is an option, Binary Search would be far more efficient for future searches.
 
@@ -137,10 +137,10 @@ $O(1)$ (constant time) complexity describes an algorithm whose execution time or
 - **Independent from input size ($n$):** the number of steps the algorithm takes does not grow with the size of the input.
 - **Efficient:** algorithms with $O(1)$ complexity are typically very fast because they perform a fixed number of operations.
 - **Examples:**
-  - Expressions that never change (e.g., $100 \times 100000$).
-  - Accessing an element in an array by its index (e.g., `arr[5]`).
-  - Inserting an element into a hash table (on average).
-  - Checking the length of a list (if it is pre-computed)
+	- Expressions that never change (e.g., $100 \times 100000$).
+	- Accessing an element in an array by its index (e.g., `arr[5]`).
+	- Inserting an element into a hash table (on average).
+	- Checking the length of a list (if it is pre-computed)
 
 **Example:**
 
@@ -171,8 +171,8 @@ $O(log \space n)$ (logarithmic time) complexity describes an algorithm where the
 - **Efficient for Large Inputs:** algorithms with $O(log \space n)$ complexity are very efficient for processing large inputs because the work grows slowly.
 - **Common in Divide-and-Conquer:** algorithms that repeatedly divide the input into smaller parts often have $O(log \space n)$ complexity.
 - **Examples:**
-  - **Binary Search:** searching for a value in a sorted array by repeatedly halving the search space.
-  - **Tree Traversals:** operations on balanced binary search trees (e.g., insert, delete, or search).
+	- **Binary Search:** searching for a value in a sorted array by repeatedly halving the search space.
+	- **Tree Traversals:** operations on balanced binary search trees (e.g., insert, delete, or search).
 
 **Logarithms:**
 
@@ -236,8 +236,8 @@ $O(n)$ (linear time) complexity describes an algorithm where the execution time 
 - **Common in Iterative Processes:** algorithms that process every element in the input once, typically exhibit $O(n)$ complexity.
 - **Scales Well with Moderate Input Sizes:** while it may not be as fast as $O(1)$ or $O(log \space n)$, linear time algorithms are efficient for many use cases.
 - **Examples:**
-  - **Iterating through an Array:** visiting every element in an array to calculate the sum or find a specific value.
-  - **Linear Search:** searching for a value in an unsorted array by examining each element.
+	- **Iterating through an Array:** visiting every element in an array to calculate the sum or find a specific value.
+	- **Linear Search:** searching for a value in an unsorted array by examining each element.
 
 **Example:**
 
@@ -263,8 +263,8 @@ $O(n \space log \space n)$ (linearithmic time) complexity describes an algorithm
 - **Combination of Linear and Logarithmic Work:** the $n$ factor comes from processing all elements, and the $log \space n$ factor arises from repeatedly dividing the problem or performing logarithmic work for each element.
 - **Efficient for Large Data Sets:** many optimal sorting algorithms, like Merge Sort and Quick Sort, operate with $O(n \space log \space n)$ complexity.
 - **Examples:**
-  - **Merge Sort:** divides the array into halves ($log \space n$) and merges them back together in linear time ($n$).
-  - **Heap Sort:** builds a binary heap ($O(n)$) and performs repeated heap extractions ($O(log \space n)$).
+	- **Merge Sort:** divides the array into halves ($log \space n$) and merges them back together in linear time ($n$).
+	- **Heap Sort:** builds a binary heap ($O(n)$) and performs repeated heap extractions ($O(log \space n)$).
 
 **Example:**
 
@@ -309,8 +309,8 @@ $O(n^2)$ (quadratic time) complexity describes an algorithm where the execution 
 - **Nested Loops:** algorithms with $O(n^2)$ complexity often involve two nested loops, each iterating through the input.
 - **Good for Small Data Sets:** while slow for large inputs, $O(n^2)$ can be acceptable for small or moderately sized inputs.
 - **Examples:**
-  - **Bubble Sort:** compares adjacent elements in a list and swaps them if needed, requiring nested iterations over the input.
-  - **Checking All Pairs:** comparing every possible pair of elements in an array or matrix.
+	- **Bubble Sort:** compares adjacent elements in a list and swaps them if needed, requiring nested iterations over the input.
+	- **Checking All Pairs:** comparing every possible pair of elements in an array or matrix.
 
 **Example:**
 
@@ -342,12 +342,13 @@ We can also deduce this from the fact that there are two nested `for()` loops, e
 $O(2^n)$ (exponential time) complexity describes an algorithm where the execution time doubles with each additional unit increase in the input size $n$. This results in extremely fast growth in the number of operations, making $O(2^n)$ algorithms impractical for large input sizes. Such algorithms are typically seen in problems where all possible combinations or solutions must be explored.
 
 **Characteristics:**
-  - **Exponential Growth:**
+
+- **Exponential Growth:**
 	- As the input size increases, the time or number of operations grows exponentially.
 	- Even small increases in $n$ result in very large increases in time complexity.
-  - **Brute Force or Recursive Solutions:**
+- **Brute Force or Recursive Solutions:**
 	- Many algorithms with $O(2^n)$ complexity are brute-force recursive solutions that explore every possible subset or combination of elements in the problem.
-  - **Examples:**
+- **Examples:**
 	- **Subset Sum Problem:** finding all subsets of a set and checking whether they sum to a given target.
 	- **Solving the Traveling Salesman Problem (TSP):** finding the shortest possible route that visits all cities exactly once and returns to the origin.
 	- **Fibonacci Sequence (naive recursion):** a naive recursive approach to calculating Fibonacci numbers results in $O(2^n)$ time complexity because of repeated calculations of the same values.
@@ -450,16 +451,17 @@ $$T(n) = O(2^n)$$
 $O(n!)$ (factorial time) complexity describes an algorithm where the execution time grows factorially with the size of the input. This means that for an input of size $n$, the algorithm performs $n!$ operations, where $n! = n \times (n - 1) \times (n - 2) \times ⋯ \times 1$. Factorial growth is extraordinarily rapid, making $O(n!)$ algorithms infeasible for even moderately large input sizes.
 
 **Characteristics:**
+
 - **Extremely Rapid Growth:** $n!$ grows faster than exponential complexities like $2^n$.
-  - For example:
-	- $5!=120$
-	- $10!=3,628,800$
-	- $20!=2,432,902,008,176,640,000$
+	- For example:
+		- $5!=120$
+		- $10!=3,628,800$
+		- $20!=2,432,902,008,176,640,000$
 - **Typical in Combinatorial Problems:** algorithms that need to consider every possible permutation of $n$ items often have $O(n!)$ complexity.
 - **Used in Brute Force Solutions:** problems requiring a search through all permutations, such as the Traveling Salesman Problem (brute force approach).
 - **Examples:**
-  - **Traveling Salesman Problem (Brute Force):** given $n$ cities, calculate the total distance for all $n!$ possible tours to find the shortest route.
-  - **Generating Permutations:** generating all possible orders of $n$ items.
+	- **Traveling Salesman Problem (Brute Force):** given $n$ cities, calculate the total distance for all $n!$ possible tours to find the shortest route.
+	- **Generating Permutations:** generating all possible orders of $n$ items.
 
 **Factorial:**
 
@@ -492,7 +494,7 @@ def f(n):
 		f(n - 1) # Depends on recursion depth
 ```
 
-This example is a recursive function that generates a tree of recursive calls with a depth of `n` and branching factor equal to `n`. When `n == 0`, it prints `"******"` and returns, serving as the base case. For `n > 0`, the function recursively calls itself `n` times, decrementing `n` in each call. As a result, the total number of recursive calls grows rapidly, with the number of calls forming a factorial-like growth pattern ($n!$). Each time the base case is reached, `"******"` is printed, making this a highly recursive function with exponential output for larger values of `n`.
+This example is a recursive function that generates a tree of recursive calls with a depth of `n` and branching factor equal to `n`. When `n == 0`, it prints `******` and returns, serving as the base case. For `n > 0`, the function recursively calls itself `n` times, decrementing `n` in each call. As a result, the total number of recursive calls grows rapidly, with the number of calls forming a factorial-like growth pattern ($n!$). Each time the base case is reached, `******` is printed, making this a highly recursive function with exponential output for larger values of `n`.
 
 Again, let's take a scheme as example with `n = 3`:
 
@@ -508,7 +510,7 @@ As we just say, the factorial of $3$ is:
 
 $$3! = 3 \times 2 \times 1 = 6$$
 
-And if we look at the scheme, it make sense because at the top level, the for loop in `f(3)` runs 3 times, calling `f(2)` three times. Each call to `f(2)` runs its own for loop 2 times, resulting in $3 \times 2 = 6$ calls to `f(1)`. Each `f(1)` runs a loop 1 time, making $6 \times 1 = 6$ calls to `f(0)`, where `"******"` is printed. The total number of calls is $3! = 6$, with `f(2)` called 3 times, `f(1)` called 6 times, and `f(0)` called 6 times.
+And if we look at the scheme, it make sense because at the top level, the for loop in `f(3)` runs 3 times, calling `f(2)` three times. Each call to `f(2)` runs its own for loop 2 times, resulting in $3 \times 2 = 6$ calls to `f(1)`. Each `f(1)` runs a loop 1 time, making $6 \times 1 = 6$ calls to `f(0)`, where `******` is printed. The total number of calls is $3! = 6$, with `f(2)` called 3 times, `f(1)` called 6 times, and `f(0)` called 6 times.
 
 ## III. Sources and References
 
