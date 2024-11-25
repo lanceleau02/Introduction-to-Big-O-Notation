@@ -93,7 +93,7 @@ The first step is to understand and review your problem's requirements:
 	- **Space/memory limitations:** how much memory can you afford to use?
 	- **Accuracy:** does the algorithm need to be exact, or is an approximation acceptable?
 
-**2. Analyze the Data Characteristics**
+**2. Analyze the data characteristics**
 
 As we saw before, to make the right algorithm choice, we need to take care of the data:
 
@@ -102,7 +102,7 @@ As we saw before, to make the right algorithm choice, we need to take care of th
 - **Sorted vs. unsorted:** if the data is already sorted, certain algorithms (like binary search) may perform much better than others.
 - **Fixed vs. dynamic data:** will the data change frequently (like adding/deleting items), or is it static?
 
-**3. Match the Problem with the Right Algorithm**
+**3. Match the problem with the right algorithm**
 
 Based on the problem and data characteristics, here's how you might choose the algorithm:
 
