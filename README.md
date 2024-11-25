@@ -130,7 +130,7 @@ Based on the problem and data characteristics, here's how you might choose the a
 
 ### 1. $O(1)$ - Constant Time
 
-**$O(1)$ complexity** (constant time complexity) describes an algorithm whose execution time or space requirements remain constant regardless of the input size. This means that the algorithm performs the same number of operations, regardless of whether the input size is 1, 100, or 1 million.
+$O(1)$ (constant time) complexity describes an algorithm whose execution time or space requirements remain constant regardless of the input size. This means that the algorithm performs the same number of operations, regardless of whether the input size is 1, 100, or 1 million.
 
 **Characteristics:**
 
@@ -163,7 +163,7 @@ We categorize a function to $O(1)$ if and only if all the steps have a complexit
 
 ### 2. $O(log \space n)$ - Logarithmic Time
 
-**$O(log \space n)$ complexity** (logarithmic time complexity) describes an algorithm where the execution time grows logarithmically with the size of the input. This means that as the input size increases, the number of operations grows much more slowly, proportional to the logarithm of the input size.
+$O(log \space n)$ (logarithmic time) complexity describes an algorithm where the execution time grows logarithmically with the size of the input. This means that as the input size increases, the number of operations grows much more slowly, proportional to the logarithm of the input size.
 
 **Characteristics:**
 
@@ -228,7 +228,7 @@ $$O(log \space 8) \rarr O(log_2 \space 8) \rarr 2^? = 8 \rarr 2^3 = 8$$
 
 ### 3. $O(n)$ - Linear Time
 
-**$O(n)$ complexity** (linear time complexity) describes an algorithm where the execution time grows linearly with the size of the input. This means that as the input size doubles, the number of operations also doubles.
+$O(n)$ (linear time) complexity describes an algorithm where the execution time grows linearly with the size of the input. This means that as the input size doubles, the number of operations also doubles.
 
 **Characteristics:**
 
@@ -256,7 +256,7 @@ And as we saw earlier, and according to the *"Big-O Notation Growth Rate"*, the 
 
 ### 4. $O(n \space log \space n)$ - Linearithmic Time
 
-**$O(n \space log \space n)$ complexity** (linearithmic time complexity) describes an algorithm where the execution time grows proportionally to the input size $n$, multiplied by the logarithm of $n$. This type of complexity often arises in algorithms that combine linear iteration with a divide-and-conquer approach or efficient sorting mechanisms.
+$O(n \space log \space n)$ (linearithmic time) complexity describes an algorithm where the execution time grows proportionally to the input size $n$, multiplied by the logarithm of $n$. This type of complexity often arises in algorithms that combine linear iteration with a divide-and-conquer approach or efficient sorting mechanisms.
 
 **Characteristics:**
 
@@ -301,7 +301,7 @@ And if you look to the visualization, it makes sense because for each iteration 
 
 ### 5. $O(n^2)$ - Quadratic Time
 
-**$O(n^2)$ complexity** (quadratic time complexity) describes an algorithm where the execution time grows proportionally to the square of the input size. This means that as the input size $n$ doubles, the number of operations increases by a factor of $4 \space (2^2)$.
+$O(n^2)$ (quadratic time) complexity describes an algorithm where the execution time grows proportionally to the square of the input size. This means that as the input size $n$ doubles, the number of operations increases by a factor of $4 \space (2^2)$.
 
 **Characteristics:**
 
@@ -339,7 +339,7 @@ We can also deduce this from the fact that there are two nested `for()` loops, e
 
 ### 5. $O(2^n)$ - Exponential Time
 
-**$O(2^n)$ complexity** (exponential time complexity) describes an algorithm where the execution time doubles with each additional unit increase in the input size $n$. This results in extremely fast growth in the number of operations, making $O(2^n)$ algorithms impractical for large input sizes. Such algorithms are typically seen in problems where all possible combinations or solutions must be explored.
+$O(2^n)$ (exponential time) complexity describes an algorithm where the execution time doubles with each additional unit increase in the input size $n$. This results in extremely fast growth in the number of operations, making $O(2^n)$ algorithms impractical for large input sizes. Such algorithms are typically seen in problems where all possible combinations or solutions must be explored.
 
 **Characteristics:**
   - **Exponential Growth:**
@@ -447,7 +447,7 @@ $$T(n) = O(2^n)$$
 
 ### 6. $O(n!)$ - Factorial Time
 
-**$O(n!)$ complexity** (factorial time complexity) describes an algorithm where the execution time grows factorially with the size of the input. This means that for an input of size $n$, the algorithm performs $n!$ operations, where $n! = n \times (n - 1) \times (n - 2) \times ⋯ \times 1$. Factorial growth is extraordinarily rapid, making $O(n!)$ algorithms infeasible for even moderately large input sizes.
+$O(n!)$ (factorial time) complexity describes an algorithm where the execution time grows factorially with the size of the input. This means that for an input of size $n$, the algorithm performs $n!$ operations, where $n! = n \times (n - 1) \times (n - 2) \times ⋯ \times 1$. Factorial growth is extraordinarily rapid, making $O(n!)$ algorithms infeasible for even moderately large input sizes.
 
 **Characteristics:**
 - **Extremely Rapid Growth:** $n!$ grows faster than exponential complexities like $2^n$.
