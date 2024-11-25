@@ -419,7 +419,7 @@ Ok, there is a lot of informations so let's do it step by step. On the first lev
 
 You can notice that to calculate the number of operations for each level we can do:
 
-$$nb\_operations = 2^{level - 1} \times C$$
+$$nb_operations = 2^{level - 1} \times C$$
 
 To get back to our diagram, since on the left side of the tree we're substracting by 1 and on the right side we're substracting by 2, the depth of the tree will be shorter on the right side but, at the maximum depth of recursion (where we hit a base case), we have something like:
 
