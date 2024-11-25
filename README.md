@@ -11,13 +11,13 @@ Welcome in this introduction to Big-O Notation. I decided to write it to better 
 	4. Why it's useful
 	5. Choose the right algorithm
 2. Complexities
-    1. $O(1)$ - Constant Time
-    2. $O(log \space n)$ - Logarithmic Time
-    3. $O(n)$ - Linear Time
-    4. $O(n \space log \space n)$ - Linearithmic Time
-    5. $O(n^2)$ - Quadratic Time
-    6. $O(2^n)$ - Exponential Time
-    7. $O(n!)$ - Factorial Time
+	1. $O(1)$ - Constant Time
+	2. $O(log \space n)$ - Logarithmic Time
+	3. $O(n)$ - Linear Time
+	4. $O(n \space log \space n)$ - Linearithmic Time
+	5. $O(n^2)$ - Quadratic Time
+	6. $O(2^n)$ - Exponential Time
+	7. $O(n!)$ - Factorial Time
 3. Sources and References
 
 ## I - Overview
@@ -111,8 +111,8 @@ Based on the problem and data characteristics, here's how you might choose the a
 - **Problem:** you need to sort a list of integers.
 - **Data:** the list is large (millions of integers).
 - **Algorithm Choices:**
-  - **Merge Sort or QuickSort ($O(n log n)$):** these are efficient sorting algorithms for large datasets. They will scale better than simpler sorts (like Bubble Sort).
-  - **Bubble Sort ($O(n²)$):** works well for small datasets but becomes inefficient as data grows.
+	- **Merge Sort or QuickSort ($O(n log n)$):** these are efficient sorting algorithms for large datasets. They will scale better than simpler sorts (like Bubble Sort).
+	- **Bubble Sort ($O(n²)$):** works well for small datasets but becomes inefficient as data grows.
 
 **Conclusion:** Merge Sort or QuickSort is the best choice for large datasets. If the list is small, Bubble Sort could suffice, but it’s generally less efficient.
 
