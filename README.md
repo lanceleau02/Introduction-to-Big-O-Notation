@@ -419,7 +419,7 @@ Ok, there is a lot of informations so let's do it step by step. On the first lev
 
 You can notice that to calculate the number of operations for each level we can do:
 
-$$nb_operations = 2^{level - 1} \times C$$
+$$2^{level - 1} \times C$$
 
 To get back to our diagram, since on the left side of the tree we're substracting by 1 and on the right side we're substracting by 2, the depth of the tree will be shorter on the right side but, at the maximum depth of recursion (where we hit a base case), we have something like:
 
@@ -508,7 +508,7 @@ As we just say, the factorial of $3$ is:
 
 $$3! = 3 \times 2 \times 1 = 6$$
 
-And if we look at the scheme, it make sense because at the top level, the for loop in `f(3)` runs 3 times, calling `f(2)` three times. Each call to `f(2)` runs its own for loop 2 times, resulting in $3 \times 2 = 6$ calls to `f(1)`. Each `f(1)` runs a loop 1 time, making $6 \times 1 = 6$ calls to `f(0)`, where "******" is printed. The total number of calls is $3! = 6$, with `f(2)` called 3 times, `f(1)` called 6 times, and `f(0)` called 6 times.
+And if we look at the scheme, it make sense because at the top level, the for loop in `f(3)` runs 3 times, calling `f(2)` three times. Each call to `f(2)` runs its own for loop 2 times, resulting in $3 \times 2 = 6$ calls to `f(1)`. Each `f(1)` runs a loop 1 time, making $6 \times 1 = 6$ calls to `f(0)`, where `"******"` is printed. The total number of calls is $3! = 6$, with `f(2)` called 3 times, `f(1)` called 6 times, and `f(0)` called 6 times.
 
 ## III. Sources and References
 
