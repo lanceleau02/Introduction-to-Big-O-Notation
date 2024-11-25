@@ -112,7 +112,7 @@ Based on the problem and data characteristics, here's how you might choose the a
 - **Data:** the list is large (millions of integers).
 - **Algorithm Choices:**
 	- **Merge Sort or QuickSort (**$O(n \space log \space n)$**):** these are efficient sorting algorithms for large datasets. They will scale better than simpler sorts (like Bubble Sort).
-	- **Bubble Sort ($O(n²)$):** works well for small datasets but becomes inefficient as data grows.
+	- **Bubble Sort (**$O(n²)$**):** works well for small datasets but becomes inefficient as data grows.
 
 **Conclusion:** Merge Sort or QuickSort is the best choice for large datasets. If the list is small, Bubble Sort could suffice, but it’s generally less efficient.
 
@@ -121,8 +121,8 @@ Based on the problem and data characteristics, here's how you might choose the a
 - **Problem:** you need to find whether a number exists in a list of integers.
 - **Data:** the list is unsorted and contains millions of elements.
 - **Algorithm Choices:**
-  - **Linear Search ($O(n)$):** this is a simple algorithm that will scan through each element in the list.
-  - **Binary Search ($O(log \space n)$):** if the list were sorted, Binary Search would be much faster.
+  - **Linear Search (**$O(n)$**):** this is a simple algorithm that will scan through each element in the list.
+  - **Binary Search (**$O(log \space n)$**):** if the list were sorted, Binary Search would be much faster.
 
 **Conclusion:** Linear Search is the right choice if the data is unsorted. If sorting the list is an option, Binary Search would be far more efficient for future searches.
 
