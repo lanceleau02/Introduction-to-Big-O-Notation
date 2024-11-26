@@ -204,7 +204,7 @@ Here is a diagram to schematize its operation with `n = 8`:
 
 > Note: we skip the last recursive call with $n = 0$ to make it easier to understand.
 
-So, in this example where `n` equals to ${\color{green}8}$ we can see that there is ${\color{lightblue}3}$ levels of execution and in each level### 4. $O(n \space log \space n)$ - Linearithmic Time we divide `n` by ${\color{red}2}$, corresponding to $2^{\color{lightblue}3} = {\color{red}2} \times {\color{red}2} \times {\color{red}2} = {\color{green}8}$.
+So, in this example where `n` equals to ${\color{green}8}$ we can see that there is ${\color{lightblue}3}$ levels of execution and in each level we divide `n` by ${\color{red}2}$, corresponding to $2^{\color{lightblue}3} = {\color{red}2} \times {\color{red}2} \times {\color{red}2} = {\color{green}8}$.
 
 **Example (iterative):**
 
@@ -226,7 +226,7 @@ Iteration 3: n = 2 / 2 = 1
 
 So when we pass in a value of `n`, we'll always need to divide this value `n` by $2(log \space n)$ times to get 1 or we need to do $log \space n$ iterations of the loop before we get 1, so:
 
-$$O(log \space 8) \rightarrow O(log_2 \space 8) \rightarrow 2^? = 8 \rightarrow 2^3 = 8$$
+$$O(log \space 8) \rightarrow O(log_2 \space 8) = 3 \rightarrow 2^? = 8 \rightarrow 2^3 = 8$$
 
 ### 3. $O(n)$ - Linear Time
 
@@ -293,7 +293,7 @@ the `for()` loop ($O(n)$) and not the `print()` statements ($O(1)$).
 
 For each iteration in the `while()` loop, we loop to the full size of $y$, which is the original size of $n$, so each of these inner loops has a complexity of $O(n)$, so the processing time increases linearly with the size of $n$.
 
-Example with an input ($n$) of ${\color{lightblue}4}$: $O(log_{\color{red}2} \space {\color{lightblue}4}) = {\color{green}2}$ because ${\color{green}2}^{\color{red}2} = {\color{lightblue}4}$
+Example with an input ($n$) of ${\color{lightblue}4}$: $O(log_{\color{red}2} \space {\color{lightblue}4}) = {\color{green}2}$ because ${\color{red}2}^{\color{green}2} = {\color{lightblue}4}$
 
 Time to bring everything together, $O(n \space log \space n)$ means $O(n \times log \space n)$ so if we insert some values we get: 
 
