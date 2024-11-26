@@ -18,10 +18,9 @@ Welcome in this introduction to Big-O Notation. I decided to write it to better 
 	5. $O(n^2)$ - Quadratic Time
 	6. $O(2^n)$ - Exponential Time
 	7. $O(n!)$ - Factorial Time
-3. Space Complexity
-4. Big-O Gotchas
-5. Complete Example
-6. Sources & References
+3. Big-O Gotchas
+4. Space Complexity
+5. Sources & References
 
 ## I - Overview
 
@@ -515,7 +514,94 @@ $$3! = 3 \times 2 \times 1 = 6$$
 
 And if we look at the scheme, it make sense because at the top level, the for loop in `f(3)` runs 3 times, calling `f(2)` three times. Each call to `f(2)` runs its own for loop 2 times, resulting in $3 \times 2 = 6$ calls to `f(1)`. Each `f(1)` runs a loop 1 time, making $6 \times 1 = 6$ calls to `f(0)`, where `******` is printed. The total number of calls is $3! = 6$, with `f(2)` called 3 times, `f(1)` called 6 times, and `f(0)` called 6 times.
 
-## III. Sources & References
+## III. Big-O Gotchas
+
+Big-O Notation involves a lot of potential mistakes, here are some examples.
+
+### Example 1
+
+```Python
+def twoLoops(n):
+	for i in range(0, n): # O(n)
+		# do something
+	for i in range(0, n): # O(n)
+		# do something
+```
+
+In this example, there are two `for()` loops that iterate from 0 to `n`, each have a complexity of $O(n)$. So the code complexity would be $O(2n)$ but since Big-O Notation ignore constants, the complexity is $O(n)$. But beware! This is true, as long as these loops are acting on the same input `n`. The following examples will explain this subitility.
+
+### Example 2
+
+```Python
+def twoInputsAdd(a, b):
+	for i in range(0, a): # O(a)
+		# do something
+	for i in range(0, b): # O(b)
+		# do something
+```
+
+Some people think the complexity is $O(2n)$ like in the previous example, but they're wrong because we don't know the difference between `a` and `b`, so the real complexity is $O(a + b)$.
+
+### Example 3
+
+```Python
+def twoInputsMult(a, b):
+    for i in range(0, a): # O(a)
+        for j in range(0, b): # O(b)
+            # do something
+```
+
+Some people think the complexity will be $O(n^2)$ but that's false because $O(n^2)$ means that for one iteration of one input, we're going to iterate through the same exact input, but here, we iterate through two different inputs so the complexity is $O(a \times b)$.
+
+## IV. Space complexity
+
+### 1. Definition
+
+**Space complexity** of an algorithm is a measure of the total amount of memory or storage space required by the algorithm to execute. It considers all the memory used by the algorithm, including:
+
+1. **Fixed part:** the memory required for constants, simple variables, and fixed-size data structures, whose size does not depend on the input (e.g., program code, input/output variables).
+2. **Variable part:** the memory required for variables, dynamic memory allocations, and recursive stack space, whose size depends on the size of the input or intermediate computations.
+
+Formally, space complexity is expressed as a function $S(n)$, where $n$ represents the size of the input, and it evaluates the growth of memory requirements as $n$ increases. The focus is usually on the asymptotic space complexity, which considers how the memory requirements scale with large inputs, often expressed in Big-O notation.
+
+For example:
+
+- A sorting algorithm like **merge sort** has $O(n)$ space complexity for temporary arrays.
+- In-place algorithms like **quicksort** have $O(logn)$ space complexity for recursion stack space.
+
+### 2. Example
+
+Here's a little example to better understand:
+
+```Python
+def countDown(n):
+	if n == 0: # O(1)
+		return # O(1)
+	return countDown(n - 1) # O(n)
+```
+
+The `countDown()` function is a simple recursive function that takes an integer $n$ as input and decreases it by 1 in each recursive call until it reaches 0, at which point the recursion stops.
+
+Let's breakdown it with `n = 5`:
+
+```Text
+Iteration 1: countDown(5)
+Iteration 2: countDown(4)
+Iteration 3: countDown(3)
+Iteration 4: countDown(2)
+Iteration 5: countDown(1)
+Iteration 6: countDown(0)
+```
+
+As you can see with the comments, each statement has a space complexity of $O(1)$ except for the last one that has a space complexity of $O(n)$. Why? Because each recursive call adds a new frame to the call stack. Since the recursion depth can go up to $n$, the space complexity due to the call stack is $O(n)$.
+
+> Note: no additional memory (beyond the stack frame) is used because the function does not store intermediate variables or create new data structures.
+
+The total space complexity is determined by the depth of recursion, which is proportional to $n$. Hence, the overall space complexity of the function is $O(n)$.
+
+In other words, the space complexity is going to scale linearly while the size of the input and the space required to execute this function is going to scale proportionally with the size of the input.
+
+## V. Sources & References
 
 ### Videos & Playlists
 
