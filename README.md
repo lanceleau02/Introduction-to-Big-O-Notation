@@ -418,7 +418,7 @@ Let's use an another scheme to better understand:
 
 </div>
 
-Ok, there is a lot of informations so let's do it step by step. On the first level of recursion, to combine the results of the two recursive calls ($n-1$ and $n-2$), it "costs" $C$ operations because $1 \times C$ or $2^0 \times C$. On the second level of recursion, it "costs" four operations because $2 \times C$ or $2^1 \times C$. On the third level of recursion, it "costs" height operations because $4 \times C$ or $2^2 \times C$. Finally, on the fourth level of recursion, it "costs" sixteen operations because $8 \times C$ or $2^3 \times C$. And so on for the following levels...
+Ok, there is a lot of information so let's do it step by step. On the first level of recursion, to combine the results of the two recursive calls ($n-1$ and $n-2$), it "costs" $C$ operations because $1 \times C$ or $2^0 \times C$. On the second level of recursion, it "costs" four operations because $2 \times C$ or $2^1 \times C$. On the third level of recursion, it "costs" height operations because $4 \times C$ or $2^2 \times C$. Finally, on the fourth level of recursion, it "costs" sixteen operations because $8 \times C$ or $2^3 \times C$. And so on for the following levels...
 
 You can notice that to calculate the number of operations for each level we can do:
 
