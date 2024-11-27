@@ -266,7 +266,7 @@ $O(n \space log \space n)$ (linearithmic time) complexity describes an algorithm
 - **Efficient for Large Data Sets:** many optimal sorting algorithms, like Merge Sort and Quick Sort, operate with $O(n \space log \space n)$ complexity.
 - **Examples:**
 	- **Merge Sort:** divides the array into halves ($log \space n$) and merges them back together in linear time ($n$).
-	- **Heap Sort:** builds a binary heap ($O(n)$) and performs repeated heap extractions ($O(log \space n)$).
+	- **Heap Sort:** builds a binary heap ($O(n)$ complexity) and performs repeated heap extractions ($O(log \space n)$ complexity).
 
 **Example:**
 
