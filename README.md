@@ -438,7 +438,7 @@ $$T(n) \leq C \cdot \\{1 + 2^1 + 2^2 + 2^3 + ... + 2^{n - 1}\\}$$
 
 This is equals to:
 
-$$T(n) = C \cdot \{2^n - 1\}$$
+$$T(n) = C \cdot \\{2^n - 1\\}$$
 
 Since $C$ and $-1$ are constants, we can ignore them so:
 
