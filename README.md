@@ -226,7 +226,7 @@ Iteration 3: n = 2 / 2 = 1
 
 So when we pass in a value of `n`, we'll always need to divide this value `n` by $2(log \space n)$ times to get 1 or we need to do $log \space n$ iterations of the loop before we get 1, so:
 
-$$O(log \space 8) \rightarrow O(log_2 \space 8) = 3 \rightarrow 2^? = 8 \rightarrow 2^3 = 8$$
+$$O(log \space 8) \rightarrow O(log_2 \space 8) = 3 \rightarrow 2^3 = 8$$
 
 ### 3. $O(n)$ - Linear Time
 
