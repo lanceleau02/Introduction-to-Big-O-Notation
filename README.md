@@ -289,7 +289,7 @@ Here is a scheme to better understand:
 </div>
 
 > Note: the brackets that enclose the printing statements designate
-the `for()` loop ($O(n)$) and not the `print()` statements ($O(1)$).
+the `for()` loop ($O(n)$ complexity) and not the `print()` statements ($O(1)$ complexity).
 
 For each iteration in the `while()` loop, we loop to the full size of $y$, which is the original size of $n$, so each of these inner loops has a complexity of $O(n)$, so the processing time increases linearly with the size of $n$.
 
