@@ -508,7 +508,7 @@ Again, let's take a scheme as example with `n = 3`:
 
 As you can see, we hit our base cases (the `print()` and `return` statements) 6 times and spoiler, it's not random. We get this result simply because $3! = 6$, but it goes further.
 
-As we just say, the factorial of $3$ is:
+As we just say, the factorial of 3 is:
 
 $$3! = 3 \times 2 \times 1 = 6$$
 
