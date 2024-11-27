@@ -432,7 +432,7 @@ So if we sumup all of them, we get:
 
 $$T(n) \leq C + 2^1C + 2^2C + 2^3C + ... + 2^{n-1}C$$
 
-At this point, you're maybe wondering why we use the '$\leq$' sign instead of a simple '$=$'. That's because, as we saw it earlier, the right side of the tree will terminate earlier in the recursion. So at the maximum depth level, we may not have these many ($2^{n-1}C$) operations that we need to take care of. And that's ok because the Big-O Notation uses the upper bound (it focuses on the worst-case scenarios for how the runtime of an algorithm scales as the input size grows), so:
+At this point, you're maybe wondering why we use the $\leq$ sign instead of a simple $=$. That's because, as we saw it earlier, the right side of the tree will terminate earlier in the recursion. So at the maximum depth level, we may not have these many ($2^{n-1}C$) operations that we need to take care of. And that's ok because the Big-O Notation uses the upper bound (it focuses on the worst-case scenarios for how the runtime of an algorithm scales as the input size grows), so:
 
 $$T(n) \leq C \cdot \{1 + 2^1 + 2^2 + 2^3 + ... + 2^{n - 1}\}$$
 
