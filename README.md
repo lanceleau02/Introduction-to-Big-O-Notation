@@ -192,7 +192,7 @@ def logFunc(n):
 	return logFunc(n) # O(log n)
 ```
 
-This example is a simple recursive function that repeatedly divides the input `n` by 2 (using `Math.floor()` to ensure the result the following rule can be deduced:is an integer) until `n` reaches 0.
+This example is a simple recursive function that repeatedly divides the input `n` by 2 (using `Math.floor()` to ensure the result is an integer) until `n` reaches 0.
 
 Here is a diagram to schematize its operation with `n = 8`:
 
