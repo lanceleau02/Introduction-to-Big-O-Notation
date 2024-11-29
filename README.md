@@ -178,7 +178,12 @@ $O(log \space n)$ (logarithmic time) complexity describes an algorithm where the
 
 **Logarithms:**
 
-Before going further, we need to understand what a logarithm is. Simply, it's the power that a number needs to be raised to get some other number. In computer science, unless specified otherwise, the number that we want to raise to some power is always 2 (binary systems). This is the theory, now let's see that more in details thanks to an example.
+Before going further, we need to understand what a logarithm is. Simply, it's the power that a number needs to be raised to get some other number. In computer science, unless specified otherwise, the number that we want to raise to some power is always 2 (binary systems). In other words, a logarithm base $b$ of a positive number $x$ satisfies the following definition:
+
+$$y = log_b(x) \rightarrow b^y = x$$
+
+Where the logarithm $y$ is the exponent to which $b$ must be raised to get $x$.
+This is the theory, now let's see that more in details thanks to an example.
 
 Considering this expression: $2^x = 8$, we want to find the number to which we must raise 2 to find 8. This expression is the equivalent to: $x = log_2(8) = 3$ so $2^3 = 8$. Here it is, this is the basics of logarithms. Now, we can see codes examples.
 
@@ -598,8 +603,6 @@ As you can see with the comments, each statement has a space complexity of $O(1)
 > Note: no additional memory (beyond the stack frame) is used because the function does not store intermediate variables or create new data structures.
 
 The total space complexity is determined by the depth of recursion, which is proportional to $n$. Hence, the overall space complexity of the function is $O(n)$.
-
-In other words, the space complexity is going to scale linearly while the size of the input and the space required to execute this function is going to scale proportionally with the size of the input.
 
 ## V. Sources & References
 
